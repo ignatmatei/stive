@@ -1,19 +1,20 @@
-Data top(Node *top){
-	if (isEmpty(top)) return INT_MIN;
+#include "stive.h"
+char top(Node *top){
+	if (isEmpty(top)) return NULL;
 	return top->val;
 }
 
-void push(Node**top, Data v) {
+void push(Node**top, char v) {
 	Node* newNode=(Node*)malloc(sizeof(Node));
 	newNode->val=v;
 	newNode->next=*top;
 	*top=newNode;
 }
 
-Data pop(Node**top) {
+char pop(Node**top) {
 	if (isEmpty(*top)) return INT_MIN;
 	Node *temp=(*top);
-	Data aux=temp->val;
+	char aux=temp->val;
 	*top=(*top)->next;
 	free(temp);
 	return aux;
@@ -30,5 +31,5 @@ void deleteStack(Node**top){
 		*top=(*top)->next;
 		free(temp);
 	}
-}
+
 

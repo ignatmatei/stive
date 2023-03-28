@@ -1,8 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "stive.h"
 
 int main()
 {
-    printf("Hello world!\n");
+    char test;
+    scanf("%c",&test);
+    Node* stackTop = NULL;
+    push(&stackTop,test);
+    char x = top(stackTop);
+    printf("%c",x);
     return 0;
 }
